@@ -6,6 +6,6 @@
   tasks:
     - name: Send notification message via Slack
       community.general.slack:
-        channel: '#controller-notification'
+        channel: '{{ slack_channel }}'
         token: '{{ slack_token }}'
         msg: '{{ artifact | to_nice_yaml }}'
