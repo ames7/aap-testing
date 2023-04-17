@@ -16,3 +16,12 @@
         image_id: "{{image_id}}"
         tags:
           Environment: aws
+      register: instance_name
+
+     - ansible.builtin.debug: 
+        var: instance_name
+    
+    - name: Pass on Instance name artifact
+      ansible.builtin.set_stats:
+        data:
+          instance_name: "{{ instance_name }}"

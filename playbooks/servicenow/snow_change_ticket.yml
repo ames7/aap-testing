@@ -10,7 +10,7 @@
         state: new
         requested_by: "akrieger"
         short_description: "Provisioning VM {{ instance_name }}"
-        description: "Provisioning {{ instance_name | default('ec2-VM')}} for user {{ awx_user_name | default('Bob The Builder') }}"
+        description: "Provisioning {{ instance_name | default('ec2-VM')}} for user {{ awx_user_name | default('akrieger') }}"
         priority: moderate
         risk: low
         impact: low
