@@ -8,7 +8,7 @@
       servicenow.itsm.change_request:
         state: closed
         close_code: "successfully provisioned {{ instance_name }}"
-        close_notes: "{{ hostvars[instance_name] | to_nice_yaml }}"
+        close_notes: "successfully provisioned {{ instance_name }}"
         assignment_group: "Hardware"
         number: "{{ change_request['record']['number'] }}"
       delegate_to: localhost
