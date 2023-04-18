@@ -24,4 +24,4 @@
     - name: Pass on Instance name artifact
       ansible.builtin.set_stats:
         data:
-          public_dns_name: "{{ public_dns_name }}"
+          instance: "{{ public_dns_name }}"
