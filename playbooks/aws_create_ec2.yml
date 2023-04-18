@@ -16,7 +16,7 @@
         image_id: "{{image_id}}"
         tags:
           Environment: aws
-      #register: public_dns_name
+      register: public_dns_name
 
     - ansible.builtin.debug: 
         var: public_dns_name
