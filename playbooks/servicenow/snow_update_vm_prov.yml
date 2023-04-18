@@ -1,6 +1,6 @@
 ---
 - name: Update Change ticket
-  hosts: "{{ instance_name | default('localhost') }}"
+  hosts: "{{ public_dns_name | default('localhost') }}"
   gather_facts: false
 
   tasks:  
