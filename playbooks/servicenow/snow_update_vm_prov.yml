@@ -7,7 +7,7 @@
     - name: Close change_request
       servicenow.itsm.change_request:
         state: closed
-        close_code: "successfully provisioned {{ instance_name }}"
+        close_code: successful
         close_notes: "successfully provisioned {{ instance_name }}"
         assignment_group: "Hardware"
         number: "{{ change_request['record']['number'] }}"
