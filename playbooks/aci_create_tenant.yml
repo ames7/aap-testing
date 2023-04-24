@@ -1,6 +1,6 @@
 ---
 - name: ACI Create Tenant and query it
-  hosts: localhost
+  hosts: all
   gather_facts: false
 
   vars:
