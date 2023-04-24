@@ -24,4 +24,4 @@
     - name: Pass on Instance name artifact
       ansible.builtin.set_stats:
         data:
-          instance_name: "{{ instance_name }}"
+          instance_name: "{{instance_name}}"
