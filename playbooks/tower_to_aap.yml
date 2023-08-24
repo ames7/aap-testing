@@ -25,10 +25,10 @@
     
     - name: Export Tower Projects
       ansible.controller.export:
+        projects: 'all'
         controller_host: "{{controller_host1}}"
         controller_oauthtoken: "{{controller_token1}}"
         validate_certs: False
-        projects: 'all'
       register: tower_projects
 
     # - name: Export Tower Inventory
@@ -78,10 +78,11 @@
 
     - name: Import Tower Projects
       ansible.controller.import:
+        assets: "{{ tower_projects.assets }}"
         controller_host: "{{controller_host2}}"
         controller_oauthtoken: "{{controller_token2}}"
         validate_certs: False
-        assets: "{{ tower_projects.assets }}"
+        
 
     # - name: Import Tower Inventory
     #   ansible.controller.import:
