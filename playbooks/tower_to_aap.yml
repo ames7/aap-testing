@@ -31,50 +31,50 @@
         projects: 'all'
       register: tower_projects
 
-    - name: Export Tower Inventory
-      ansible.controller.export:
-        controller_host: "{{tower_host}}"
-        controller_username: "{{username}}"
-        controller_password: "{{password}}"
-        validate_certs: false
-        inventory: 'all'
-      register: tower_inventory
+    # - name: Export Tower Inventory
+    #   ansible.controller.export:
+    #     controller_host: "{{tower_host}}"
+    #     controller_username: "{{username}}"
+    #     controller_password: "{{password}}"
+    #     validate_certs: false
+    #     inventory: 'all'
+    #   register: tower_inventory
 
-    - name: Export Tower Inventory Sources
-      ansible.controller.export:
-        controller_host: "{{tower_host}}"
-        controller_username: "{{username}}"
-        controller_password: "{{password}}"
-        validate_certs: false
-        inventory_sources: 'all'
-      register: tower_inventory_sources
+    # - name: Export Tower Inventory Sources
+    #   ansible.controller.export:
+    #     controller_host: "{{tower_host}}"
+    #     controller_username: "{{username}}"
+    #     controller_password: "{{password}}"
+    #     validate_certs: false
+    #     inventory_sources: 'all'
+    #   register: tower_inventory_sources
 
-    - name: Export Tower Job Templates
-      ansible.controller.export:
-        controller_host: "{{tower_host}}"
-        controller_username: "{{username}}"
-        controller_password: "{{password}}"
-        validate_certs: false
-        job_templates: 'all'
-      register: tower_job_templates
+    # - name: Export Tower Job Templates
+    #   ansible.controller.export:
+    #     controller_host: "{{tower_host}}"
+    #     controller_username: "{{username}}"
+    #     controller_password: "{{password}}"
+    #     validate_certs: false
+    #     job_templates: 'all'
+    #   register: tower_job_templates
 
-    - name: Export Tower Notification Templates
-      ansible.controller.export:
-        controller_host: "{{tower_host}}"
-        controller_username: "{{username}}"
-        controller_password: "{{password}}"
-        validate_certs: false
-        notification_templates: 'all'
-      register: tower_notification_templates
+    # - name: Export Tower Notification Templates
+    #   ansible.controller.export:
+    #     controller_host: "{{tower_host}}"
+    #     controller_username: "{{username}}"
+    #     controller_password: "{{password}}"
+    #     validate_certs: false
+    #     notification_templates: 'all'
+    #   register: tower_notification_templates
 
-    - name: Export Tower Workflow Job Templates
-      ansible.controller.export:
-        controller_host: "{{tower_host}}"
-        controller_username: "{{username}}"
-        controller_password: "{{password}}"
-        validate_certs: false
-        workflow_job_templates: 'all'
-      register: tower_workflow_job_templates
+    # - name: Export Tower Workflow Job Templates
+    #   ansible.controller.export:
+    #     controller_host: "{{tower_host}}"
+    #     controller_username: "{{username}}"
+    #     controller_password: "{{password}}"
+    #     validate_certs: false
+    #     workflow_job_templates: 'all'
+    #   register: tower_workflow_job_templates
 
     - name: Import Tower Projects
       ansible.controller.import:
@@ -84,51 +84,51 @@
         validate_certs: false
         assets: "{{ tower_projects.assets }}"
 
-    - name: Import Tower Inventory
-      ansible.controller.import:
-        controller_host: "{{controller_host}}"
-        controller_username: "{{username}}"
-        controller_password: "{{password}}"
-        validate_certs: false
-        assets: "{{ tower_inventory.assets }}"
+    # - name: Import Tower Inventory
+    #   ansible.controller.import:
+    #     controller_host: "{{controller_host}}"
+    #     controller_username: "{{username}}"
+    #     controller_password: "{{password}}"
+    #     validate_certs: false
+    #     assets: "{{ tower_inventory.assets }}"
 
-    - name: Import Tower Inventory Sources
-      ansible.controller.import:
-        controller_host: "{{controller_host}}"
-        controller_username: "{{username}}"
-        controller_password: "{{password}}"
-        validate_certs: false
-        assets: "{{ tower_inventory_sources.assets }}"
+    # - name: Import Tower Inventory Sources
+    #   ansible.controller.import:
+    #     controller_host: "{{controller_host}}"
+    #     controller_username: "{{username}}"
+    #     controller_password: "{{password}}"
+    #     validate_certs: false
+    #     assets: "{{ tower_inventory_sources.assets }}"
 
-    - name: Import Tower Job Templates
-      ansible.controller.import:
-        controller_host: "{{controller_host}}"
-        controller_username: "{{username}}"
-        controller_password: "{{password}}"
-        validate_certs: false
-        assets: "{{ tower_job_templates.assets }}"
+    # - name: Import Tower Job Templates
+    #   ansible.controller.import:
+    #     controller_host: "{{controller_host}}"
+    #     controller_username: "{{username}}"
+    #     controller_password: "{{password}}"
+    #     validate_certs: false
+    #     assets: "{{ tower_job_templates.assets }}"
 
-    - name: Import Tower Notification Templates
-      ansible.controller.import:
-        controller_host: "{{controller_host}}"
-        controller_username: "{{username}}"
-        controller_password: "{{password}}"
-        validate_certs: false
-        assets: "{{ tower_notification_templates.assets }}"
+    # - name: Import Tower Notification Templates
+    #   ansible.controller.import:
+    #     controller_host: "{{controller_host}}"
+    #     controller_username: "{{username}}"
+    #     controller_password: "{{password}}"
+    #     validate_certs: false
+    #     assets: "{{ tower_notification_templates.assets }}"
 
-    - name: Export Tower workflow_job_templates
-      ansible.controller.export:
-        controller_host: "{{tower_host}}"
-        controller_username: "{{username}}"
-        controller_password: "{{password}}"
-        validate_certs: false
-        workflow_job_templates: 'all'
-      register: tower_workflow_job_templates
+    # - name: Export Tower workflow_job_templates
+    #   ansible.controller.export:
+    #     controller_host: "{{tower_host}}"
+    #     controller_username: "{{username}}"
+    #     controller_password: "{{password}}"
+    #     validate_certs: false
+    #     workflow_job_templates: 'all'
+    #   register: tower_workflow_job_templates
 
-    - name: Import Tower workflow_job_templates
-      ansible.controller.import:
-        controller_host: "{{controller_host}}"
-        controller_username: "{{username}}"
-        controller_password: "{{password}}"
-        validate_certs: false
-        assets: "{{ tower_workflow_job_templates.assets }}"
+    # - name: Import Tower workflow_job_templates
+    #   ansible.controller.import:
+    #     controller_host: "{{controller_host}}"
+    #     controller_username: "{{username}}"
+    #     controller_password: "{{password}}"
+    #     validate_certs: false
+    #     assets: "{{ tower_workflow_job_templates.assets }}"
