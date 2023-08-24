@@ -1,6 +1,11 @@
 ---
-- hosts: localhost
+- name:  Import and Export Controller Configs
+  hosts: localhost
   gather_facts: false
+  environment:
+     CONTROLLER_HOST: https://localhost
+     CONTROLLER_OAUTH_TOKEN: 'n6FPw5g6VNCA7X9hYdopbXWXLVE2l2'
+     CONTROLLER_VERIFY_SSL: False
 
   tasks:
 
@@ -24,10 +29,6 @@
     
     - name: Export Tower Projects
       ansible.controller.export:
-        controller_host: "{{tower_host}}"
-        controller_username: "{{username}}"
-        controller_password: "{{password}}"
-        validate_certs: false
         projects: 'all'
       register: tower_projects
 
@@ -78,10 +79,6 @@
 
     - name: Import Tower Projects
       ansible.controller.import:
-        controller_host: "{{controller_host}}"
-        controller_username: "{{username}}"
-        controller_password: "{{password}}"
-        validate_certs: false
         assets: "{{ tower_projects.assets }}"
 
     # - name: Import Tower Inventory
