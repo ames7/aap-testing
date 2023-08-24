@@ -6,7 +6,7 @@
 
     # Unable to export Tower Credentials, needs to be done manually. Creds need to be the exact same name as before in order for the import to work.
     # - name: Export Tower Credentials
-    #   ansible.controller.tower_export:
+    #   ansible.controller.export:
     #     controller_host: "tower_host"
     #     controller_username: "admin"
     #     controller_password: "password"
@@ -23,7 +23,7 @@
     #     assets: "{{ tower_credentials.assets }}"
     
     - name: Export Tower Projects
-      ansible.controller.tower_export:
+      ansible.controller.export:
         controller_host: "{{tower_host}}"
         controller_username: "{{username}}"
         controller_password: "{{password}}"
@@ -32,7 +32,7 @@
       register: tower_projects
 
     - name: Export Tower Inventory
-      ansible.controller.tower_export:
+      ansible.controller.export:
         controller_host: "{{tower_host}}"
         controller_username: "{{username}}"
         controller_password: "{{password}}"
@@ -41,7 +41,7 @@
       register: tower_inventory
 
     - name: Export Tower Inventory Sources
-      ansible.controller.tower_export:
+      ansible.controller.export:
         controller_host: "{{tower_host}}"
         controller_username: "{{username}}"
         controller_password: "{{password}}"
@@ -50,7 +50,7 @@
       register: tower_inventory_sources
 
     - name: Export Tower Job Templates
-      ansible.controller.tower_export:
+      ansible.controller.export:
         controller_host: "{{tower_host}}"
         controller_username: "{{username}}"
         controller_password: "{{password}}"
@@ -59,7 +59,7 @@
       register: tower_job_templates
 
     - name: Export Tower Notification Templates
-      ansible.controller.tower_export:
+      ansible.controller.export:
         controller_host: "{{tower_host}}"
         controller_username: "{{username}}"
         controller_password: "{{password}}"
@@ -68,7 +68,7 @@
       register: tower_notification_templates
 
     - name: Export Tower Workflow Job Templates
-      ansible.controller.tower_export:
+      ansible.controller.export:
         controller_host: "{{tower_host}}"
         controller_username: "{{username}}"
         controller_password: "{{password}}"
@@ -117,7 +117,7 @@
         assets: "{{ tower_notification_templates.assets }}"
 
     - name: Export Tower workflow_job_templates
-      ansible.controller.tower_export:
+      ansible.controller.export:
         controller_host: "{{tower_host}}"
         controller_username: "{{username}}"
         controller_password: "{{password}}"
