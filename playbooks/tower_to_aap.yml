@@ -44,7 +44,7 @@
       ansible.controller.tower_export:
         controller_host: "{{tower_host}}"
         controller_username: "{{username}}"
-        controller_password: "{{password}}""
+        controller_password: "{{password}}"
         validate_certs: false
         inventory_sources: 'all'
       register: tower_inventory_sources
@@ -53,7 +53,7 @@
       ansible.controller.tower_export:
         controller_host: "{{tower_host}}"
         controller_username: "{{username}}"
-        controller_password: "{{password}}""
+        controller_password: "{{password}}"
         validate_certs: false
         job_templates: 'all'
       register: tower_job_templates
@@ -62,7 +62,7 @@
       ansible.controller.tower_export:
         controller_host: "{{tower_host}}"
         controller_username: "{{username}}"
-        controller_password: "{{password}}""
+        controller_password: "{{password}}"
         validate_certs: false
         notification_templates: 'all'
       register: tower_notification_templates
@@ -71,7 +71,7 @@
       ansible.controller.tower_export:
         controller_host: "{{tower_host}}"
         controller_username: "{{username}}"
-        controller_password: "{{password}}""
+        controller_password: "{{password}}"
         validate_certs: false
         workflow_job_templates: 'all'
       register: tower_workflow_job_templates
@@ -80,7 +80,7 @@
       ansible.controller.import:
         controller_host: "{{controller_host}}"
         controller_username: "{{username}}"
-        controller_password: "{{password}}""
+        controller_password: "{{password}}"
         validate_certs: false
         assets: "{{ tower_projects.assets }}"
 
@@ -88,7 +88,7 @@
       ansible.controller.import:
         controller_host: "{{controller_host}}"
         controller_username: "{{username}}"
-        controller_password: "{{password}}""
+        controller_password: "{{password}}"
         validate_certs: false
         assets: "{{ tower_inventory.assets }}"
 
@@ -96,7 +96,7 @@
       ansible.controller.import:
         controller_host: "{{controller_host}}"
         controller_username: "{{username}}"
-        controller_password: "{{password}}""
+        controller_password: "{{password}}"
         validate_certs: false
         assets: "{{ tower_inventory_sources.assets }}"
 
@@ -104,7 +104,7 @@
       ansible.controller.import:
         controller_host: "{{controller_host}}"
         controller_username: "{{username}}"
-        controller_password: "{{password}}""
+        controller_password: "{{password}}"
         validate_certs: false
         assets: "{{ tower_job_templates.assets }}"
 
@@ -112,7 +112,7 @@
       ansible.controller.import:
         controller_host: "{{controller_host}}"
         controller_username: "{{username}}"
-        controller_password: "{{password}}""
+        controller_password: "{{password}}"
         validate_certs: false
         assets: "{{ tower_notification_templates.assets }}"
 
@@ -120,7 +120,7 @@
       ansible.controller.tower_export:
         controller_host: "{{tower_host}}"
         controller_username: "{{username}}"
-        controller_password: "{{password}}""
+        controller_password: "{{password}}"
         validate_certs: false
         workflow_job_templates: 'all'
       register: tower_workflow_job_templates
@@ -129,6 +129,6 @@
       ansible.controller.import:
         controller_host: "{{controller_host}}"
         controller_username: "{{username}}"
-        controller_password: "{{password}}""
+        controller_password: "{{password}}"
         validate_certs: false
         assets: "{{ tower_workflow_job_templates.assets }}"
