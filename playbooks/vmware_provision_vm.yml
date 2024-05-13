@@ -23,7 +23,7 @@
         state: poweredon
         template: "rhel template"
         validate_certs: false
-        name: "{{ survey_name | default('rhel template') }}"
+        name: "{{ survey_name | default('rhel dev') }}"
         wait_for_ip_address: true
         hardware:
           num_cpus: "{{ num_cpus }}"
