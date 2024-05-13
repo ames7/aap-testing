@@ -18,23 +18,23 @@
 
     - name: Clone a virtual machine from Linux template and customize
       community.vmware.vmware_guest:
-        datacenter: "Datacenter"
-        folder: /aap-testing
+        datacenter: "SDDC-Datacenter"
+        folder: /sandbox-2q894
         state: poweredon
-        template: "ubuntu-test-template"
+        template: "rhel template"
         validate_certs: false
-        name: "{{ survey_name | default('ubuntu-test') }}"
+        name: "{{ survey_name | default('rhel template') }}"
         wait_for_ip_address: true
         hardware:
           num_cpus: "{{ num_cpus }}"
           memory_mb: "{{ memory_mb }}"
         networks:
-          - name: VM Network
+          - name: segment-sandbox-2q894
             type: dhcp
             connected: true
             start_connected: true
-        customization:
-          domain: "lab.test"
-          dns_servers:
-            - 192.168.0.20
+        #customization:
+          # domain: "lab.test"
+          # dns_servers:
+          #   - 192.168.0.20
 
