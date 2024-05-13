@@ -19,7 +19,7 @@
     - name: Clone a virtual machine from Linux template and customize
       community.vmware.vmware_guest:
         datacenter: "SDDC-Datacenter"
-        folder: /sandbox-2q894
+        folder: /Workloads/sandbox-2q894
         state: poweredon
         template: "rhel template"
         validate_certs: false
